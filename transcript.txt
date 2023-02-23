@@ -1,0 +1,27 @@
+9h00 : Réunion d'équipe
+Présents : John, Alice, Bob, Claire
+
+John : Bonjour tout le monde, merci d'être présents pour cette réunion. Aujourd'hui, nous allons parler du lancement de notre nouveau produit.
+Alice : Super, je suis impatiente d'en savoir plus !
+Bob : De même, c'est un projet passionnant.
+Claire : Oui, mais avant de commencer, je pense que nous devrions faire le point sur l'avancement des autres projets en cours.
+
+10h00 : Point sur les autres projets
+John : Très bien, passons aux autres projets. Alice, peux-tu nous parler de l'avancement du projet A ?
+Alice : Oui, bien sûr. Nous avons rencontré un petit problème avec le développement de la fonctionnalité X, mais nous avons trouvé une solution.
+Bob : Parfait, et pour le projet B ?
+Claire : Le projet B avance bien, nous avons terminé la phase de conception et nous sommes prêts à passer à la phase de développement.
+John : Très bien, merci pour ces informations. Maintenant, revenons à notre nouveau produit.
+
+11h00 : Lancement du nouveau produit
+Alice : Donc, pour le lancement de notre nouveau produit, nous devons d'abord finaliser la campagne de communication et préparer le site web.
+Bob : Oui, et nous devons aussi nous assurer que nous avons suffisamment de stock pour répondre à la demande.
+Claire : Tout à fait, je vais m'occuper de la partie logistique.
+John : Parfait, et pour la campagne de communication, Alice, peux-tu nous dire où nous en sommes ?
+Alice : Oui, nous avons déjà rédigé le communiqué de presse et nous sommes en train de finaliser les visuels pour les réseaux sociaux.
+
+12h00 : Fin de la réunion
+John : Très bien, si personne n'a rien d'autre à ajouter, je pense que nous pouvons conclure cette réunion.
+Alice : D'accord, à la prochaine fois !
+Bob : Au revoir tout le monde.
+Claire : Bonne journée !

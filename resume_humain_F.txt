@@ -1,0 +1,3 @@
+Résumé possible :
+
+L'équipe discute de la possibilité pour LNRS de proposer une solution de filtrage en mode SaaS et des implications de cette proposition. Ils s'accordent sur le fait que la responsabilité de la configuration doit rester chez le client, et que la conformité doit être la propriété des modèles. Ils soulèvent également des préoccupations concernant la documentation et les tests des modèles, ainsi que sur la manière de gérer les messages Swift MX mappés en FUF pour le filtrage. Ils conviennent également qu'il est important de faire un assessment approfondi de tous les paramètres du modèle et de fournir une documentation claire et à jour pour éviter les confusions.

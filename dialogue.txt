@@ -1,0 +1,55 @@
+Framework & key vocabulary
+Gael et Tuan (CASA)
+il y a aussi un aspect gouvernance à mettre en place
+il manque aussi Data, system & process validation = valider la qualité des données, pas d'altération. C'est un pilier en dehors de l'ongoing monitoring. Ca peut être des réconciliations entre système source et production?
+Il y a aussi l'aspect résilience: résilience côté LNRS, comment on assure la continuité en cas de problème chez LNRS (on a une partie dédiée dans notre contrat)
+David Journet (BPCE/Natixis): gouvernance / ongoing monitoring revient en général sur les équipes conformité. Sauf si tout est à la main du fournisseur de logiciel
+ 
+Third party models
+Gael: est-ce que LNRS va proposer du filtrage en mode SaaS? Si LNRS propose une formule SaaS, LNRS sera soumis au ongoing performance monitoring
+Ronan: tout dépend si c'est LNRS qui gère complètement la configuration ou si LNRS ne fait qu'héberger l'instance. Si LNRS ne fait qu'héberger, mais que toute la configuration reste chez le client alors la responsabilité reste chez le client
+Ronan: la conformité doit être owner des modèles. Ne souhaite pas que tout soit contrôlé par le vendeur
+Daniela / Céline / David: Décide du paramétrage. C'est bien comme ça car en fonction de l'approche de risque de chacun, des activités, cela pourrait être risqué de ne pas pouvoir définir le paramétrage. Il faut qu'il y ait une partie qui reste à la main du client pour adapter au contexte de chacun
+Ronan: notre problème aujourd'hui est qu'on a qu'une évaluation empirique du modèle et aurait besoin d'aide au niveau documentation et éléments de tests pour qu'on puisse valider
+Celine: on refait les tests sur les algo car on n'a pas les mêmes comportements, parfois censé être applicable que dans un cadre limité mais en faisant les tests parfois s'applique plus largement. Aussi parfois la documentation est corrigée mais ne sont pas notifiés (il y a eu une erreur de paramétrage lié à ça )
+Gael: dans le modèle on doit chaque année préciser les defects identifiés, l'évolution… Il faut que LNRS soit en capacité de partager les defects constatés pour que le client puisse faire son propre assessment du risque et ce que l'on met en place
+Ronan: on est censés connaitre les 45 algo et les interdépendances des algos et sur des données représentatives de production
+Preethi: utilise Swift pour model validation mais permet de tester que les messages Swift MT. Question comment gérer les MX qui seront mappés en FUF pour filtrage
+Gael: le threshold apparait dans la documentation, du coup cela génère des questions alors que ce n'est pas modifiable. Il faut faire un assessment sur tous les paramètres
+Ronan: comme pourquoi l'algo 35 est grisé?
+Tuan: il faut modifier en profondeur la documentation. Le 72% est supprimé de la doc mais apparaît encore dans un écran de log et donc cela génère encore des questions
+ 
+Independence of model validation
+Daniela / Celine: testing des paramétrages standard conseillés par LNRS aiderait par rapport au régulateur (pas forcément pour model validation), ça nous rassurerait et permettrait de clôturer des points d'audit comme pour régulateur de Singapour. Dans tous les cas on refait un testing par EY qui assure une revue indépendante en plus de la revue faite par l'équipe MRM (model risk management). Le testing par EY permet aussi de s'évaluer par rapport à nos pairs. L'efficience est aussi un élément important qui est regardé par EY et donne un benchmark
+Ronan: il y a un paquet d'algo qui sont binaires, donc pas forcément beaucoup d'intérêt. Il faudrait savoir quels sont les algo qui ont un impact sur la détection. Sur independent testing ils prennent une Liste OFAC et construisent des données à partir de ça. Besoin de documenter les limites du moteur, à partir de quand on ne détecte plus
+Daniela: il y a des algo qui ont été créés parfois pour 1 client ou qui ne peuvent pas être activés (35), on les voit on ne peut pas les utiliser ou ça n'a pas de sens mais il faut être capable de tout expliquer
+Tuan: question de gouvernance, comment les choix sont faits pour intégrer des évolutions du filtre
+Revue sectorielle conduite par ACPR sur liste OFAC et sur liste sanctions Russes sur exact match + dérivés
+Régulateurs mandatent des presta (Deloitte, AML) pour faire les tests et ces personnes maîtrisent le sujet donc poussent les tests
+Ronan: comme on est tous testés de manière indépendantes par les régulateurs, il y a une opportunité d'aider à créer un standard de filtrage. On est matures pour un filtrage plus standardisé et cela aiderait pour le model validation. Sur la 5.8 il y a des choix éditoriaux qui sont très impactants, des hits qui ne sont plus générés. Si les régulateurs validaient d'abord les éditeurs puis venaient chez les banques ça aiderait. Le Standard de filtrage se base sur les commonalités d'utilisation actuelle. Ca permettrait d'accélérer le process d'upgrade du filtre, surtout si c'est documenté
+Gael: ce qui aiderait à accélérer c'est aussi ????
+Même version de Filtre pour Account et Transaction ce qui limite les travaux de model validation mais le standard est différent
+Sur les programmes russe la date de naissance est présente partout et de bonne qualité
+ 
+je viens de discuter avec Daniela (Natixis / BPCE) sur le sujet du standard de filtrage, pour elle ce n'est pas imaginable car il y a trop de spécificités locales et en fonction des caractéristiques de flux
+ 
+Activity
+Celine: problème avec l'équipe MRM sur le fichier de règle FML. Pas de moyen de leur permettre de le lire correctement. Fourni le fichier plat, mais ne voit pas les "trigger" pour expliquer comment cela va fonctionner. Toutes les règles FML, Decision Reapplication… c'est compliqué à lire un fichier plat. Aurait besoin d'une solution juste pour lire, car avec FML editor c'est à peu près compréhensilbe, mais en fichier plat
+Julien: on a plein de macro internes pour identifier l'obsolescence des règles sur bad / good guys qui ne sont plus dans les listes
+Tuan: a souvent des questions sur les stats sur les règles, nombre de règles, ce qui est utilisé, pas utilisé
+ 
+Tuan: je pense que LNRS peut aider aussi sur ongoing monitoring avec partage de méthodo de test, votre propre performance sur vos reco de config. Partager ce qui a été testé et le résultat sur les nouvelles fonctionnalités
+Gael: besoin que LNRS indique ce qui est minor / major change
+                Question : comment on défini ce qui est minor / major ?
+Julien: si major change ça déclenche un process MRM, donc besoin d'identifier quand il y a un major changes
+ 
+Ronan: pour changer de version, besoin d'un intérêt fonctionnel + faciliter les tests avec des jeux de test et une solution qui simplifie le testing
+Longueur des projets due à la qualité et au manque de documentation et d'outillage. Si on peut faire un projet 4-5 mois, ok d'avoir une nouvelle version tous les 6 mois
+ 
+Celine: la formation sur les règles, ça n'a pas aidé, pas compris. C'est en travaillant sur des cas concrets au quotidien qu'elle a appris (formation il y a 10 ans)
+Daniela: dans le cadre de montée de version, il faut partager les practical changes
+ 
+Next session :
+Deep dive in the question of having a standard configuration of the filter, how to come up to this knowing that it will depend on regions, type of screening (sanctions, PEP…). Do we go for a configuration where you catch everything possible? Avoid speaking of “standard” as we don’t want to be recommending. Just share benchmark or explanation of expected behavior.
+Deep dive in the requirements for each item on the board
+How to document when a new algo / parameter is created?
